@@ -1,0 +1,105 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" >-->
+
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <title>Review Page</title>-->
+
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">-->
+
+
+<!--      <link rel="stylesheet" href="./style.css">-->
+<!--    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">-->
+
+
+<!--</head>-->
+
+<!--<body>-->
+
+<!--  <div class="table-users">-->
+<!--   <div class="header">Reviews</div>-->
+
+<!--   <table cellspacing="0">-->
+<!--      <tr>-->
+<!--         <th>Product</th>-->
+<!--         <th>Name</th>-->
+<!--         <th>Rating</th>-->
+<!--          <th>Using Since</th>>-->
+<!--         <th>Comment Heading</th>-->
+<!--         <th width="230">Comments</th>-->
+<!--      </tr>-->
+<!--         {% for review in reviews %}-->
+<!--      <tr>-->
+<!--          <td>{{review.get('Product')}}</td>-->
+<!--         <td>{{review.get('Name')}}</td>-->
+<!--         <td>{{review.get('Rating')}}</td>-->
+<!--          <td>{{review.get('Using Since')}}-->
+<!--         <td>{{review.get('CommentHead')}}</td>-->
+<!--         <td>{{review.get('Comment')}} </td>-->
+<!--       {% endfor %}-->
+<!--   </table>-->
+<!--</div>-->
+<!--</body>-->
+
+<!--</html>-->
+<!--######-->
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Result Page</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+  <div class="table-users">
+   <div class="header">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+<!--        <ul class="navbar-nav">-->
+<!--            <li class="nav-item">-->
+<!--            <a href="/static/scrapper_data.csv" download="scrapper_data.csv">Download your search result from here after the result display on page.</a>-->
+<!--            </li>-->
+<!--            <li class="nav-item">-->
+<!--            <a class="nav-link" href="/graph"><b>Graphs</b></a>-->
+<!--            </li>-->
+<!--        </ul>-->
+        </nav>
+
+   </div>
+      <table class="table table-striped" cellspacing="0" style="width:100%">
+        <thead>
+            <tr>
+                <th scope="col"><b>Product</b></th>
+                <th scope="col"><b>Name</b></th>
+                <th scope="col"><b>Rating</b></th>
+                <th scope="col"><b>Using Since</b></th>
+                <th scope="col"><b>Comment Heading</b></th>
+                <th width="230" scope="col"><b>Comments</b></th>
+             </tr>
+        </thead>
+        <tbody>
+
+            {% for review in reviews %}
+            <tr>
+                <td>{{review['Product']}}</td>
+                <td>{{review['Name']}}</td>
+                <td>{{review['Rating']}}</td>
+                <td>{{review['Using Since']}}</td>
+                <td>{{review['CommentHead']}}</td>
+                <td>{{review['Comment']}}</td>
+            {% endfor %}
+        </tbody>
+      </table>
+   </div>
+</body>
+</html>
+
+
