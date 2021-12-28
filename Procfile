@@ -1,6 +1,1 @@
-web: gunicorn scrapper:app
-
-
-
-
-
+web: node index.js
