@@ -86,7 +86,7 @@ def homepage():
 def about():
     return render_template('about.html')
 
-@app.route('/scrap', methods=["POST"])
+@app.route('/scrap', methods=["GET","POST"])
 def scrap():
     if request.method == "POST":
         search = request.form["search_content"].replace(' ', '')
