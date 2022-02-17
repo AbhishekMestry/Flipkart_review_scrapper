@@ -1,1 +1,1 @@
-web:gunicorn scrapper:app
+web: gunicorn scrapper:app
